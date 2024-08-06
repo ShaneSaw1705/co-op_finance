@@ -23,7 +23,7 @@ export default function NavBar() {
         <Separator />
         <Button
           variant={'ghost'}
-          className={`py-6 ${pathname === '/' ? 'bg-primary text-white' : ''}`}
+          className={`py-6 ${pathname === '/' ? 'bg-primary text-white hover:bg-primary hover:text-white' : ''}`}
           onClick={() => router.push('/')}
         >
           <Home className='mr-2' /> Dashboard
@@ -31,7 +31,7 @@ export default function NavBar() {
         <Separator />
         <Button
           variant={'ghost'}
-          className={`py-6 ${pathname === '/groups' ? 'bg-primary text-white' : ''}`}
+          className={`py-6 ${pathname === '/groups' ? 'bg-primary text-white hover:bg-primary hover:text-white' : ''}`}
           onClick={() => router.push('/groups')}
         >
           <UsersIcon className='mr-2' /> Groups
@@ -39,7 +39,7 @@ export default function NavBar() {
         <Separator />
         <Button
           variant={'ghost'}
-          className={`py-6 ${pathname === '/settings' ? 'bg-primary text-white' : ''}`}
+          className={`py-6 ${pathname === '/settings' ? 'bg-primary text-white hover:bg-primary hover:text-white' : ''}`}
           onClick={() => router.push('/settings')}
         >
           <Settings className='mr-2' /> Settings
