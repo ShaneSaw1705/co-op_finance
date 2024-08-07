@@ -9,6 +9,7 @@ import {
   Home,
   Settings,
   ChartColumnBigIcon,
+  BadgeRussianRubleIcon
 } from "lucide-react";
 
 export default function NavBar() {
@@ -19,7 +20,8 @@ export default function NavBar() {
       <div className='flex flex-col justify-between w-full h-full'>
         <div>
           <div className='h-[80px] w-full flex flex-row text-start justify-start items-center px-4'>
-            <h1 className='text-primary'>Name here</h1>
+            <BadgeRussianRubleIcon className='text-primary mr-2' />
+            <h1 className='text-primary'>Co-op Finance</h1>
           </div>
           <div className='flex flex-col w-full *:w-full *:justify-start'>
             <Button
