@@ -1,16 +1,17 @@
-import { Button } from '@/components/ui/button';
 import axios from 'axios';
 import { User } from './models/user';
 import Header from '@/components/pageheader';
 import { Separator } from '@/components/ui/separator';
 
+//TODO: Convert this code to work in a client setting. I need to convert it to use either useEffect or React Query as server components cant fetch from next backend
 async function GetUser(): Promise<User> {
+  "use server";
   const response = await axios.get<User>('http://localhost:3000/api/v1/user/gettestuser');
   return response.data;
 }
 
 const Home = async () => {
-  const user: User = await GetUser();
+  const user: User = await GetUser()
 
   return (
     <div className='grid grid-rows-[auto,1fr] h-full w-full'>
