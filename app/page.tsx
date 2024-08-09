@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 async function GetUser(): Promise<User> {
-  const response = await axios.get<User>('http://localhost:3000/api/v1/user/gettestuser');
+  const url = process.env.NEXT_PUBLIC_API_URL
+  const response = await axios.get<User>(`${url}/api/v1/user/gettestuser`);
   return response.data;
 }
 
