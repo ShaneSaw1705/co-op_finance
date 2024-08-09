@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/Navbar";
+import QueryClientProv from "@/components/QueryClientProv";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,16 +17,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className='grid grid-cols-5'>
-          <NavBar />
-          <div className="col-span-4">
-            {children}
+    <QueryClientProv>
+      <html lang="en">
+        <body className={inter.className}>
+          <div className='grid grid-cols-5'>
+            <NavBar />
+            <div className="col-span-4">
+              {children}
+            </div>
           </div>
-        </div>
-      </body>
-    </html>
+        </body>
+      </html>
+    </QueryClientProv>
   );
 }
 
