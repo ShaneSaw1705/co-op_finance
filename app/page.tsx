@@ -17,12 +17,12 @@ const Home = () => {
     queryKey: ['user'],
     queryFn: GetUser,
   })
-  if (isPending) return <p>Loading...</p>
+
   if (isError) return <p>Error</p>
   return (
     <div className='grid grid-rows-[auto,1fr] h-full w-full'>
       <Header>
-        <h1 className='flex flex-row gap-2'>Hello, <span className='text-primary'>{user.name}</span></h1>
+        <h1 className='flex flex-row gap-2'>Hello, <span className='text-primary'>{isPending ? 'Loading...' : user.name}</span></h1>
       </Header>
       <div className='p-4'>
         <h1 className='text-foreground text-6xl font-bold'>Dashboard</h1>
