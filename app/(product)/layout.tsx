@@ -1,10 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
 import NavBar from "@/components/Navbar";
 import QueryClientProv from "@/components/QueryClientProv";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,13 +13,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <QueryClientProv>
-      <html lang="en">
-        <body className={inter.className}>
-          {children}
-        </body>
-      </html>
-    </QueryClientProv>
+    <html lang="en">
+      <body>
+        <div className='grid grid-cols-5'>
+          <NavBar />
+          <div className="col-span-4">
+            {children}
+          </div>
+        </div>
+      </body>
+    </html>
   );
 }
 

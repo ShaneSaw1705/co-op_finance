@@ -12,11 +12,13 @@ import {
   BadgeRussianRubleIcon
 } from "lucide-react";
 
+
+//TODO: I need to set up an alternative style for when the screen size gets smaller
 export default function NavBar() {
   const pathname = usePathname();
   const router = useRouter();
   return (
-    <div className='min-w-64 h-screen bg-background border-secondary border-solid border-2 flex flex-col justify-start items-center text-start'>
+    <div className='w-full h-screen bg-background border-secondary border-solid border-2 flex flex-col justify-start items-center text-start'>
       <div className='flex flex-col justify-between w-full h-full'>
         <div>
           <div className='h-[80px] w-full flex flex-row text-start justify-start items-center px-4'>
