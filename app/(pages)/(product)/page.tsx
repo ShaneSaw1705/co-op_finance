@@ -1,6 +1,6 @@
 "use client";
 import axios from 'axios';
-import { User } from '../models/user';
+import { User } from '@/app/models/user';
 import Header from '@/components/pageheader';
 import { Separator } from '@/components/ui/separator';
 import { useQuery } from '@tanstack/react-query';
