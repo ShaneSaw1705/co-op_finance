@@ -14,6 +14,12 @@ const Groups = () => {
     setCreate(!create)
   }
 
+  const handleSuccess = (success: boolean) => {
+    if (success) {
+      console.log('success!')
+    }
+  }
+
   return (
     <div className='grid grid-rows-[auto,1fr] h-full w-full overflow-hidden'>
       <Header>
@@ -24,7 +30,7 @@ const Groups = () => {
       </Header>
       <div className='p-4'>
         {/* just creates hover menu */}
-        {create && <CreateGroups close={handleCreate} />}
+        {create && <CreateGroups success={handleSuccess} close={handleCreate} />}
         {/* --- */}
         <p>Other stuff</p>
       </div>
