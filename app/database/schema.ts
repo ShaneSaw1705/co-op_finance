@@ -18,6 +18,21 @@ export const group = pgTable('group', {
   updatedAt: timestamp('updated_at'),
 })
 
+export const groupDetails = pgTable('group_details', {
+  id: serial('id').primaryKey(),
+  groupId: integer('group_id'),
+  currentMoney: integer('current_money'),
+  goal: integer('goal'),
+})
+
+export const transaction = pgTable('transactions', {
+  id: serial('id').primaryKey(),
+  groupId: integer('group_id'),
+  userId: integer('user_id'),
+  amount: integer('amount'),
+  createdAt: timestamp('created_at').defaultNow(),
+})
+
 export const groupUser = pgTable('group_user', {
   id: serial('id').primaryKey(),
   groupId: integer('group_id'),
